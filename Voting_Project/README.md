@@ -14,7 +14,19 @@ I built this project to understand how combining multiple machine learning model
 * **Python**
 * **scikit-learn** (Machine Learning algorithms & ensemble methods)
 * **pandas & numpy** (Data manipulation)
-* **seaborn** (Data visualization)
+* **seaborn** (Data visualization) 
+
+## Flow Chart
+graph TD
+    A[Input Data] --> B(Logistic Regression)
+    A --> C(K-Nearest Neighbors)
+    A --> D(Random Forest)
+    
+    B -->|Weight 1| E{Soft Voting Aggregator}
+    C -->|Weight 2| E
+    D -->|Weight 3| E
+    
+    E --> F[Final Class Prediction]
 
 ## 📊 Datasets Used
 * Iris Dataset 
