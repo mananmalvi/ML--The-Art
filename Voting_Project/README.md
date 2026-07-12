@@ -31,5 +31,5 @@ I built this project to understand how combining multiple machine learning model
 ## 📬 Let's Connect!
 I am currently studying machine learning and building projects in public. 
 
-* **LinkedIn:** [Link to your new LinkedIn profile]
-* **GitHub:** [Link to your GitHub profile]
+* **LinkedIn:** [https://github.com/]
+* **GitHub:** [https://www.linkedin.com/in/manan-malvi-7849b5382/]
