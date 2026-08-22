@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        O.R.I.O.N. | Orbital Intelligence
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND VIDEO
+====================================================== -->
+
+<div class="space-video">
+
+    <video
+        id="background-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+            src="{{ url_for('static', filename='videos/asteroid.mp4') }}"
+            type="video/mp4">
+
+    </video>
+
+</div>
+
+
+<div class="video-overlay"></div>
+
+
+<!-- AMBIENT LIGHTS -->
+
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+
+<!-- =====================================================
+     MAIN ORION
+====================================================== -->
+
+<main class="orion-shell">
+
+
+    <!-- =================================================
+         TOP SYSTEM BAR
+    ================================================== -->
+
+    <div class="system-bar">
+
+
+        <div class="system-left">
+
+            <span class="online-dot"></span>
+
+            <span>
+                ORION NETWORK
+            </span>
+
+        </div>
+
+
+        <div class="system-center">
+
+            DEEP SPACE SURVEILLANCE
+
+        </div>
+
+
+        <div
+            id="utc-clock"
+            class="system-right">
+
+            00:00:00 UTC
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <header class="orion-header">
+
+
+        <div class="header-meta">
+
+            <span>
+                ORBITAL DEFENSE NETWORK
+            </span>
+
+            <i>•</i>
+
+            <span>
+                AI CORE
+            </span>
+
+            <i>•</i>
+
+            <span>
+                NEO TRACKING
+            </span>
+
+        </div>
+
+
+        <h1>
+            O.R.I.O.N.
+        </h1>
+
+
+        <div class="main-title">
+
+            ORBITAL RECONNAISSANCE &amp;
+            IMPACT OBSERVATION NETWORK
+
+        </div>
+
+
+        <div class="header-description">
+
+            AI-POWERED ASTEROID HAZARD
+            CLASSIFICATION SYSTEM
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =================================================
+         MAIN GLASS COMMAND PANEL
+    ================================================== -->
+
+    <section class="command-panel">
+
+
+        <!-- PANEL HEADER -->
+
+        <div class="panel-header">
+
+
+            <div>
+
+                <span class="panel-label">
+                    MISSION CONTROL
+                </span>
+
+                <h2>
+                    ASTEROID ANALYSIS
+                </h2>
+
+            </div>
+
+
+            <!-- RADAR -->
+
+            <div class="radar">
+
+                <div class="radar-grid"></div>
+
+                <div class="radar-sweep"></div>
+
+                <span class="radar-point"></span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             TELEMETRY
+        ================================================== -->
+
+        <div class="telemetry-row">
+
+            <div>
+                <small>AI CORE</small>
+                <strong>READY</strong>
+            </div>
+
+            <div>
+                <small>ORBIT ENGINE</small>
+                <strong>READY</strong>
+            </div>
+
+            <div>
+                <small>NEURAL LINK</small>
+                <strong>ACTIVE</strong>
+            </div>
+
+            <div>
+                <small>TRACKING</small>
+                <strong class="green">
+                    ● LIVE
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             WORKSPACE
+        ================================================== -->
+
+        <div class="workspace">
+
+
+            <!-- =================================================
+                 LEFT: INPUTS
+            ================================================== -->
+
+            <div class="input-section">
+
+
+                <div class="section-heading">
+
+                    <span>
+                        TARGET PARAMETERS
+                    </span>
+
+                    <small>
+                        ENTER ORBITAL DATA
+                    </small>
+
+                </div>
+
+
+                <div class="inputs-grid">
+
+
+                    <!-- MAGNITUDE -->
+
+                    <div class="input-module">
+
+                        <label>
+                            ABSOLUTE MAGNITUDE
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="magnitude"
+                                type="number"
+                                step="any"
+                                placeholder="20.5">
+
+                            <span>H</span>
+
+                        </div>
+
+
+                        <div class="parameter-bar">
+
+                            <div
+                                id="magnitude-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MIN DIAMETER -->
+
+                    <div class="input-module">
+
+                        <label>
+                            MIN DIAMETER
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="min_diameter"
+                                type="number"
+                                step="any"
+                                placeholder="0.10">
+
+                            <span>KM</span>
+
+                        </div>
+
+
+                        <div class="parameter-bar">
+
+                            <div
+                                id="min-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAX DIAMETER -->
+
+                    <div class="input-module">
+
+                        <label>
+                            MAX DIAMETER
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="max_diameter"
+                                type="number"
+                                step="any"
+                                placeholder="0.20">
+
+                            <span>KM</span>
+
+                        </div>
+
+
+                        <div class="parameter-bar">
+
+                            <div
+                                id="max-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- VELOCITY -->
+
+                    <div class="input-module">
+
+                        <label>
+                            RELATIVE VELOCITY
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="velocity"
+                                type="number"
+                                step="any"
+                                placeholder="15.5">
+
+                            <span>KM/S</span>
+
+                        </div>
+
+
+                        <div class="parameter-bar">
+
+                            <div
+                                id="velocity-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MISS DISTANCE -->
+
+                    <div class="input-module wide">
+
+                        <label>
+                            MISS DISTANCE
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="miss_distance"
+                                type="number"
+                                step="any"
+                                placeholder="5000000">
+
+                            <span>KM</span>
+
+                        </div>
+
+
+                        <div class="parameter-bar">
+
+                            <div
+                                id="distance-bar">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    id="analyze-btn"
+                    class="analyze-btn">
+
+                    <span class="button-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        INITIATE ORBITAL ANALYSIS
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+
+                <!-- SCAN STATUS -->
+
+                <div
+                    id="scan-status"
+                    class="scan-status">
+
+                    <span>
+                        SYSTEM READY
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT: VISUALIZATION
+            ================================================== -->
+
+            <div class="visual-section">
+
+
+                <div class="section-heading">
+
+                    <span>
+                        ORBITAL TRACKING
+                    </span>
+
+                    <small>
+                        LIVE SIMULATION
+                    </small>
+
+                </div>
+
+
+                <!-- ORBIT DISPLAY -->
+
+                <div class="orbit-display">
+
+
+                    <div class="earth">
+
+                        <div class="earth-glow"></div>
+
+                        <div class="earth-core">
+                            EARTH
+                        </div>
+
+                    </div>
+
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="orbit orbit-three"></div>
+
+
+                    <div
+                        id="asteroid-marker"
+                        class="asteroid-marker">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="trajectory-line"></div>
+
+
+                    <div class="orbit-label">
+                        NEO TRAJECTORY
+                    </div>
+
+
+                </div>
+
+
+                <!-- VISUAL STATUS -->
+
+                <div class="visual-status">
+
+                    <div>
+
+                        <span>
+                            TRACK
+                        </span>
+
+                        <strong>
+                            ACTIVE
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ORBIT
+                        </span>
+
+                        <strong>
+                            CALCULATED
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            SENSOR
+                        </span>
+
+                        <strong>
+                            ONLINE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             LOADING
+        ================================================== -->
+
+        <div
+            id="loading"
+            class="analysis-loading">
+
+
+            <div class="loading-scanner">
+
+                <div></div>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    ORBITAL ANALYSIS IN PROGRESS
+                </strong>
+
+                <small id="loading-text">
+                    ACQUIRING TARGET...
+                </small>
+
+            </div>
+
+
+            <div
+                id="loading-percent"
+                class="loading-percent">
+
+                0%
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <section
+            id="result-box"
+            class="result-panel">
+
+
+            <!-- RESULT HEADER -->
+
+            <div class="result-header">
+
+
+                <div>
+
+                    <span>
+                        ORBITAL THREAT ASSESSMENT
+                    </span>
+
+                    <h3>
+                        O.R.I.O.N. AI CORE
+                    </h3>
+
+                </div>
+
+
+                <div class="mission-info">
+
+                    <small>
+                        MISSION ID
+                    </small>
+
+                    <strong
+                        id="mission-id">
+                        ORION-000000
+                    </strong>
+
+                </div>
+
+
+                <div class="mission-info">
+
+                    <small>
+                        ANALYSIS
+                    </small>
+
+                    <strong
+                        id="analysis-time">
+                        --:--:--
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULT BODY -->
+
+            <div class="result-body">
+
+
+                <!-- THREAT -->
+
+                <div class="threat-core">
+
+
+                    <div
+                        id="status-light"
+                        class="status-light">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <small>
+                        THREAT CLASSIFICATION
+                    </small>
+
+
+                    <div
+                        id="classification"
+                        class="classification">
+
+                        AWAITING
+
+                    </div>
+
+
+                    <h4 id="result-text">
+                        --
+                    </h4>
+
+
+                    <p id="result-message">
+                        Awaiting asteroid analysis.
+                    </p>
+
+                </div>
+
+
+                <!-- RISK BREAKDOWN -->
+
+                <div class="risk-breakdown">
+
+
+                    <div class="risk-title">
+                        RISK BREAKDOWN
+                    </div>
+
+
+                    <div class="risk-item">
+
+                        <span>
+                            VELOCITY
+                        </span>
+
+                        <div class="risk-bar">
+                            <i
+                                id="velocity-risk">
+                            </i>
+                        </div>
+
+                        <strong
+                            id="velocity-risk-text">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="risk-item">
+
+                        <span>
+                            SIZE
+                        </span>
+
+                        <div class="risk-bar">
+                            <i
+                                id="size-risk">
+                            </i>
+                        </div>
+
+                        <strong
+                            id="size-risk-text">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="risk-item">
+
+                        <span>
+                            DISTANCE
+                        </span>
+
+                        <div class="risk-bar">
+                            <i
+                                id="distance-risk">
+                            </i>
+                        </div>
+
+                        <strong
+                            id="distance-risk-text">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="risk-item">
+
+                        <span>
+                            MAGNITUDE
+                        </span>
+
+                        <div class="risk-bar">
+                            <i
+                                id="magnitude-risk">
+                            </i>
+                        </div>
+
+                        <strong
+                            id="magnitude-risk-text">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATA -->
+
+                <div class="result-data">
+
+
+                    <div>
+
+                        <span>
+                            VELOCITY
+                        </span>
+
+                        <strong
+                            id="result-velocity">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            DIAMETER
+                        </span>
+
+                        <strong
+                            id="result-diameter">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            MISS DISTANCE
+                        </span>
+
+                        <strong
+                            id="result-distance">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ORBITAL STATUS
+                        </span>
+
+                        <strong
+                            id="orbital-status">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIDENCE -->
+
+            <div class="confidence-section">
+
+
+                <div class="confidence-header">
+
+                    <span>
+                        MODEL CONFIDENCE
+                    </span>
+
+                    <strong
+                        id="confidence">
+                        --%
+                    </strong>
+
+                </div>
+
+
+                <div class="confidence-bar">
+
+                    <div
+                        id="confidence-progress">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- THREAT INDEX -->
+
+            <div class="threat-index">
+
+
+                <div>
+
+                    <span>
+                        THREAT INDEX
+                    </span>
+
+                    <strong
+                        id="threat-percent">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="threat-meter">
+
+                    <div
+                        id="threat-progress">
+                    </div>
+
+                </div>
+
+
+                <div class="meter-labels">
+
+                    <span>LOW</span>
+                    <span>MODERATE</span>
+                    <span>HIGH</span>
+                    <span>CRITICAL</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TIMELINE -->
+
+            <div class="timeline">
+
+
+                <div class="timeline-step">
+                    <span>✓</span>
+                    DATA RECEIVED
+                </div>
+
+
+                <div class="timeline-step">
+                    <span>✓</span>
+                    ORBIT CALCULATED
+                </div>
+
+
+                <div class="timeline-step">
+                    <span>✓</span>
+                    AI MODEL
+                </div>
+
+
+                <div class="timeline-step">
+                    <span>✓</span>
+                    CLASSIFIED
+                </div>
+
+
+                <div class="timeline-step">
+                    <span>✓</span>
+                    COMPLETE
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="result-actions">
+
+                <button
+                    id="new-analysis"
+                    type="button">
+
+                    NEW ANALYSIS
+
+                </button>
+
+
+                <button
+                    id="report-btn"
+                    type="button">
+
+                    GENERATE MISSION REPORT
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            <span>
+                O.R.I.O.N. AI CORE
+            </span>
+
+            <i>•</i>
+
+            <span>
+                ORBITAL THREAT CLASSIFICATION
+            </span>
+
+            <i>•</i>
+
+            <span>
+                DEEP SPACE SURVEILLANCE
+            </span>
+
+            <i>•</i>
+
+            <span>
+                v3.0
+            </span>
+
+        </footer>
+
+
+    </section>
+
+
+</main>
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+
+</body>
+</html>
