@@ -115,3 +115,88 @@ graph TD
     
     B -- "If Safe" --> E["🟢 Render Green Tick & Earth Video"]
     B -- "If Hazardous" --> F["🚨 Render Red Warning & Alert Video"]
+
+```
+
+---
+
+<a id="model-performance"></a>
+## 📊 Model Performance & Benchmark
+
+We evaluated **O.R.I.O.N.** by benchmarking a standard baseline model against our tuned ensemble architecture to prove variance reduction on highly imbalanced space data[cite: 1]:
+
+| Model Version | Architecture | Cross-Val F1 Std (Variance) | Test F1-Score | Overfitting Status |
+| :--- | :--- | :---: | :---: | :---: |
+| **`Baseline`** | Single Decision Tree | **High** | Lower | Memorizes Noise[cite: 1] |
+| **`model.pkl`** | Tuned Bagging Ensemble | **Drastically Reduced** | **Optimized** | Highly Stable[cite: 1] |
+
+---
+
+<a id="how-to-run"></a>
+## 🚀 How to Run (Inference & UI)
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/your-username/ORION-AI-Defense.git](https://github.com/your-username/ORION-AI-Defense.git)
+cd ORION-AI-Defense
+```
+
+**2. Ensure you have the trained model & assets:**
+Make sure `model.pkl` is in the root directory and your background videos are located in `static/`[cite: 1].
+
+**3. Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+**4. Run the Flask server:**
+```bash
+python app.py
+```
+*Navigate to `http://127.0.0.1:5000` in your browser to access the dynamic command center.*
+
+---
+
+<a id="repository-structure"></a>
+## 📂 Repository Structure
+
+```text
+ORION_AI_Defense/
+│
+├── 🧠 model.pkl                   # Main Tuned Bagging Ensemble Weights[cite: 1]
+├── ⚙️ app.py                      # Flask REST API Backend & Routing[cite: 1]
+├── 📁 static/                     # Frontend Assets
+│   ├── 🎨 style.css               # Glassmorphism Styling
+│   ├── ⚡ script.js               # Async Logic & Dynamic Video Swapping[cite: 1]
+│   └── 🎥 manan_video_1.mp4       # Alert/Hazard Background Video[cite: 1]
+├── 📁 templates/
+│   └── 🖼️ index.html              # Command Center UI Layout[cite: 1]
+├── 📓 notebooks/
+│   └── NASA_EDA_and_Training.ipynb # Complete ML Pipeline & Tuning[cite: 1]
+├── 📋 requirements.txt            # Python Dependencies
+└── 📜 README.md                   # Project Documentation
+```
+
+---
+
+<a id="future-roadmap"></a>
+## 🤝 Future Roadmap
+
+- [x] Train baseline models and implement Variance Reduction via Bagging[cite: 1].
+- [x] Build decoupled Flask API and state-driven Glassmorphism UI[cite: 1].
+- [ ] Connect directly to the live NASA NeoWs API for automated daily scanning.
+- [ ] Integrate SHAP (SHapley Additive exPlanations) for real-time feature contribution analysis on the frontend.
+
+---
+
+<a id="lets-connect"></a>
+## 📬 Let's Connect!
+
+I am currently studying machine learning, building projects in public, and actively seeking **AI / ML Engineering Internships and Full-Time Roles**.
+
+- **LinkedIn:** [Manan Malvi](https://www.linkedin.com/in/manan-malvi-7849b5382/)
+- **GitHub:** [GitHub Profile](https://github.com/)
+
+<div align="center">
+  <sub>Built with ❤️ for Planetary Defense & Machine Learning Innovation.</sub>
+</div>
